@@ -44,6 +44,11 @@ class Array {
         return accumulator;
     }
 
+    reduce(callbackFunction) {
+        let accumulator = this.arr[0];
+        this(callbackFunction,accumulator);
+    }
+
     forEach(callbackFunction) {
         let length = this.arr.length;
         for(let iterator=0;iterator<length;iterator++) {
@@ -67,5 +72,8 @@ console.log(evenArr);
 
 let totalSumOfSquaredArr = squareOfArr.reduce((acc,curr) => acc+curr,0);
 console.log(totalSumOfSquaredArr);
+
+let totalSumWithoutInitialValue = squareOfArr.reduce((acc,curr) => acc+curr);
+console.log(totalSumWithoutInitialValue);
 
 array.forEach((element) => console.log(element));
